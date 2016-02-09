@@ -1136,6 +1136,7 @@ public class VideoModule implements CameraModule,
         mZoomValue = 0;
         resetExposureCompensation();
 
+        mUI.showSurfaceView();
         initializeVideoControl();
         showVideoSnapshotUI(false);
         installIntentFilter();
@@ -1308,6 +1309,7 @@ public class VideoModule implements CameraModule,
         mPaused = true;
 
         mUI.showPreviewCover();
+        mUI.hideSurfaceView();
         if (mMediaRecorderRecording) {
             // Camera will be released in onStopVideoRecording.
             onStopVideoRecording();
